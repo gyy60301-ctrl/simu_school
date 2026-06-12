@@ -12,15 +12,7 @@
 - `kb_reference.json`：项目知识库或参考数据
 - `images/`、`notes/`、`assets/`：项目素材
 
-### GitHub 上传约定
-
-- 不提交真实 API Key
-- 使用 `.env` 保存本地环境变量
-- `node_modules/`、`__pycache__/`、虚拟环境目录和常见本地缓存已在 `.gitignore` 中忽略
-
 ## 环境依赖安装
-
-下面按顺序执行。建议不要跳步。
 
 ### 1. 安装 Node.js
 
@@ -30,8 +22,6 @@
 node -v
 npm -v
 ```
-
-如果这两条命令都能正常输出版本号，就继续下一步。
 
 ### 2. 安装 Node.js 依赖
 
@@ -58,8 +48,6 @@ npm install
 
 ### 4. 创建 Python 虚拟环境
 
-建议单独给这个项目建一个虚拟环境。下面给出常用做法：
-
 ```bash
 python -m venv .venv
 ```
@@ -69,8 +57,6 @@ python -m venv .venv
 ```bash
 .venv\Scripts\activate
 ```
-
-如果你用的是 Conda，也可以改成你自己的环境创建方式，原则是先进入独立环境，再安装依赖。
 
 ### 5. 安装 Python 依赖
 
@@ -98,11 +84,9 @@ pip install -r requirements.txt
 
 可选依赖：
 
-- `faster-whisper`，仅 `语音转换识别多语种版.py` 会用到，没装也能运行其他脚本
+- `faster-whisper`，为`语音转换识别多语种版.py` 准备
 
 ## 启动顺序
-
-建议按这个顺序启动：
 
 ### 1. 启动 Node.js 后端
 
@@ -146,11 +130,4 @@ python 语音启动程序.py
 - 如果缺少音频、文档或 GUI 相关依赖，通常会先在 `pip install -r requirements.txt` 这一步报出来
 - 如果你只想先看网页效果，可以先只装 Node 依赖，不跑 Python 脚本
 
-## 建议的提交内容
-
-上传 GitHub 前，建议确认以下内容已经准备好：
-
-- `.env.example` 保留，`.env` 不提交
-- `requirements.txt` 已包含 Python 依赖
-- `.gitignore` 已忽略依赖、缓存和本地环境目录
 
